@@ -27,7 +27,12 @@ void solve()
         viki[i].first = B[i];
         viki[i].second = A[i];
     }
-    sort(viki.begin(), viki.end());
+    sort(viki.begin(), viki.end(), [](pair<ll,ll> &a, pair<ll,ll> &b){
+        if(a.first== b.first){
+            return a.second>b.second;
+        }
+        return a.first<b.first;
+    });
     ll ans = p;
     ll j = 0;
     ll cnt = n - 1;
